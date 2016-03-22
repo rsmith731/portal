@@ -1,0 +1,424 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{ margin:0; padding:0; text-decoration:none; border:none; font-family: 'Open Sans', sans-serif;}
+
+.wrapper{
+	width:100%;
+	}
+.header{
+	width:100%;
+	}
+.main-hed{
+	width:100%;
+	background:#424547;
+	float:left;
+	}
+.sub-hed{
+	width:100%;
+	padding:15px 0;
+	background:#c7c7c7;
+	float:left;
+	}
+.left-side{
+	float:left;	
+	border-right:1px #000 solid;
+	padding:12px 25px;
+	}
+.right-side{
+	float:right;
+	width:150px;
+	border-left:1px #000 solid;
+	padding:42px 0;
+	}
+.search-box{
+	width:90%;
+	padding:10px 5%;
+	float:left;
+	}
+.search{
+	float:right;
+	position:relative;
+	}
+.search input[type="text"]{
+	background:#e7f2fc;
+	height:37px;
+	width:300px;
+	border-radius:8px;
+	padding-left:40px;
+	}
+.search input[type="submit"]{
+	width:23px;
+	height:23px;
+	position:absolute;
+	left:10px;
+	top:7px;
+	background:url(images/search-icon.png) no-repeat;	
+	}
+.search-box a{
+	float:right;
+	margin-left:10px;
+	margin-top:8px;
+	}
+.main-con{
+	width:100%;
+	clear:both;
+	float:left;
+	padding:0 0 15px 0;
+	}
+.left-menu{
+	width:17%;
+	padding:0 0 0 2%;
+	float:left;
+	}
+.left-menu ul{
+	padding-top:20px;
+	}
+.left-menu ul li{
+	list-style:none;
+	line-height:3px;
+	display:block;
+	margin:10px 0;
+	cursor:pointer;
+	}
+.left-menu ul li.active p{
+	color: #147cc7;
+	border-bottom:1.75px #147cc7 solid;
+	}
+.left-menu ul li a{
+	color:#424547;
+	display:inline-block;
+	position:relative;
+	outline:none;
+	}
+.left-menu ul li a span{
+	width:45px;
+	display:block;
+	float:left;
+	display:inline-block;
+	vertical-align:bottom;
+	text-align:center;
+	}
+.left-menu ul li a p{
+	float:left;
+	display:inline-block;
+	position:absolute;
+	bottom:-1px;
+	padding-bottom:8px;
+	border-bottom:2px #fff solid;
+	}
+.right-chart{
+	width:72%;
+	float:right;
+	padding:10px 8% 0 0;
+	}
+.tabs-con{
+	width:94%;
+	margin:auto;
+	}
+.tab-pills{
+	width:100%;
+	}
+.tab-pills ul{
+	list-style:none;
+	padding:0 10px;
+	}
+.tab-pills ul li{
+	display:inline-block;
+	cursor:pointer;
+	color:#424547;
+	font-size:16px;
+	padding:2px 8px;
+	border-radius:5px 5px 0 0;
+	background:#fff;
+	border:2px #4396d2 solid;
+	border-bottom:none;
+	}
+.tab-pills ul li.active{
+	background:#147cc7;
+	color:#fff;
+	border:2px #3474a1 solid;
+	border-bottom:none;
+	}
+.tab-boxes{
+	width:100%;
+	}
+.each-tabox{
+	width:100%;
+	display:none;
+	}
+.tabox-head{
+	width:96%;
+	padding:10px 2%;
+	background:#147cc7;
+	border-radius:5px 5px 0 0;
+	}
+.row-listing{
+	width:100%;
+	}
+.row-listing ul{
+	list-style:none;
+	text-align:left;
+	}
+.row-listing ul li{
+	display:inline-block;
+	color:#147cc7;
+	font-weight:400;
+	font-size:16px;
+	text-align:left;
+	}
+tr.row-listing td{
+	display:inline-block;
+	color:#424547;
+	font-weight:400;
+	font-size:17px;
+	padding:0px !important;
+	text-align:left;
+	}
+.row-listing ul li img{
+	width:25px;
+	}
+.tabox-head ul li{
+	color:#fff;
+	}
+.tabox-head ul li img{
+	width:auto;
+	}
+tr.bold td{
+	font-weight:600;
+	}
+tr.row-listing td{
+	display:inline-block;
+	}
+tr.row-listing td:nth-child(1){
+	width:27.3%;
+	}
+tr.row-listing td:nth-child(2){
+	width:18%;
+	}
+tr.row-listing td:nth-child(3){
+	width:18%;
+	}
+tr.row-listing td:nth-child(4){
+	width:18%;
+	}
+.row-listing ul li:nth-child(5){
+	width:15%;
+	}
+/******/
+.row-listing ul li:nth-child(1){
+	width:27%;
+	}
+.row-listing ul li:nth-child(2){
+	width:18%;
+	}
+.row-listing ul li:nth-child(3){
+	width:18%;
+	}
+.row-listing ul li:nth-child(4){
+	width:18%;
+	}
+.row-listing ul li:nth-child(5){
+	width:15%;
+	}
+.tabox-body{
+	width:100%;
+	float:left;
+	}
+tr.row-listing{
+	width:96%;
+	display:block;
+	padding:8px 2% !important;
+	}
+.grey{
+	background:#f6f5f5 !important;
+	}
+.light{
+	background:#fbfbfb !important;
+	}
+.blue{
+	color:#006fb9;
+	}
+.visible{
+	display:block;
+	}
+
+
+@media screen and (max-width:1280px){
+.row-listing ul li{
+	font-size:16px;
+	}
+.row-listing ul li img{
+	width:16px;
+	}
+	}
+@media screen and (max-width:960px){
+.row-listing ul li{
+	font-size:11px;
+	}
+.row-listing ul li img{
+	width:14px;
+	}
+
+/******/
+tr.row-listing td:nth-child(1){
+	width:31%;
+	}
+tr.row-listing td:nth-child(2){
+	width:20%;
+	}
+tr.row-listing td:nth-child(3){
+	width:20%;
+	}
+tr.row-listing td:nth-child(4){
+	width:20%;
+	}
+tr.row-listing td:nth-child(5){
+	width:5%;
+	}
+/******/
+
+.row-listing ul li:nth-child(1){
+	width:31%;
+	}
+.row-listing ul li:nth-child(2){
+	width:20%;
+	}
+.row-listing ul li:nth-child(3){
+	width:20%;
+	}
+.row-listing ul li:nth-child(4){
+	width:20%;
+	}
+.row-listing ul li:nth-child(5){
+	width:5%;
+	}
+	}
+@media screen and (max-width:780px){
+.right-chart{
+	width:76%;
+	padding:10px 0;
+	}
+.tabs-con{
+	width:95%;
+	padding-right:5%;
+	}
+.left-menu{
+	width:20%;
+	}
+.tab-pills ul li{
+	font-size:13px;
+	}
+.row-listing ul li{
+	vertical-align:top;
+	}
+.row-listing ul li:nth-child(1){
+	text-overflow:ellipsis;
+	overflow:hidden;
+	}
+	}
+@media screen and (max-width:600px){
+* {
+	margin: -1px;
+	padding: 0;
+	text-decoration: none;
+	border: none;
+	font-family: 'Open Sans', sans-serif;
+	}
+.tab-pills ul {
+	display: none;
+}
+.search input[type="text"] {
+	width: 272px;
+	}
+
+.left-menu{
+	width:94%;
+	padding:10px 3%;
+	}
+.left-menu ul li{
+	display:inline-block;
+	vertical-align:top;
+	padding:0 15px;
+	border-right:1px #ccc solid;
+	}
+.row-listing ul li:nth-child(4){
+	width:19%;
+	}
+.left-menu ul li a span{
+	width:35px;
+	text-align:left;
+	}
+.left-menu ul li:last-child{
+	border-right:none;
+	}
+.left-menu ul li a p{
+	position:relative;
+	top:13px;
+	font-size:13px;
+	}
+.right-chart{
+	width:96%;
+	padding:10px 2%;
+	}
+.tabs-con{
+	width:100%;
+	padding:0px;
+	}
+.right-side{
+	width:25%;
+	}
+	}
+
+@media screen and (max-width:480px){
+* {
+	margin: -1px;
+	padding: 0;
+	text-decoration: none;
+	border: none;
+	font-family: 'Open Sans', sans-serif;
+	}
+.tab-pills ul {
+	display: none;
+}
+.search input[type="text"] {
+	width: 272px;
+	}
+
+.left-menu{
+	width:94%;
+	padding:10px 3%;
+	}
+.left-menu ul li{
+	display:inline-block;
+	vertical-align:top;
+	padding:0 15px;
+	border-right:1px #ccc solid;
+	}
+.row-listing ul li:nth-child(4){
+	width:19%;
+	}
+.left-menu ul li a span{
+	width:35px;
+	text-align:left;
+	}
+.left-menu ul li:last-child{
+	border-right:none;
+	}
+.left-menu ul li a p{
+	position:relative;
+	top:13px;
+	font-size:9px;
+	}
+.right-chart{
+	width:96%;
+	padding:10px 2%;
+	}
+.tabs-con{
+	width:100%;
+	padding:0px;
+	}
+.right-side{
+	width:25%;
+	}
+	}

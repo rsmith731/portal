@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home Depot - Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+<link href="css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+<link href="css/responsive.dataTables.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/dataTables.responsive.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $.getJSON('json/testjobsByType/.json',function(data){
+            console.log('data');
+        })
+    });
+</script>
+<script>
+$(document).ready(function(e) {
+    $('.tab-pills ul li').on('click', function(){
+		$('.tab-pills ul li').removeClass('active');
+		$(this).addClass('active');
+		
+		$('.each-tabox').removeClass('visible');
+		var active_tab_id = $(this).attr('data-name');
+		var active_tab_class = $(this).attr('data-name');
+		$('#' + active_tab_id).addClass('visible');
+		
+		$('.left-menu ul li').removeClass('active');
+		$('.' + active_tab_class).addClass('active');
+	});
+    $('.left-menu ul li').on('click', function(){
+		$('.left-menu ul li').removeClass('active');
+		$(this).addClass('active');
+		$('.tab-pills ul li').removeClass('active');
+		var active_pill_class = $(this).attr('data-name');
+		$('.' + active_pill_class).addClass('active');
+		
+		$('.each-tabox').removeClass('visible');
+		var active_tab_id = $(this).attr('data-name');
+		$('#' + active_tab_id).addClass('visible');
+	});
+	
+	$('.row-listing td a img').on('mouseover', function(){
+		$(this).attr('src','images/screw1.png');
+	});
+	$('.row-listing td a img').on('mouseout', function(){
+		$(this).attr('src','images/screw.png');
+	});
+	
+	/*** init dataTable plugin ***/
+	var regression_test = $('#regressionTest').DataTable({
+		"responsive":true
+	});
+	var smoke_test = $('#smokeTest').DataTable({
+		"responsive":true
+	});
+	var functional_test = $('#functionalTest').DataTable({
+		"responsive":true
+	});
+	
+});
+</script>
+</head>
+
+<body>
+	<div class="wrapper">
+    	<div class="header">
+        	<div class="main-hed">
+                <div class="right-side">
+                </div>
+            </div>
+            <div class="sub-hed">
+            </div>  	
+        </div>
+        <div class="search-box">
+                <a href="#"><img src="images/question-circle.png"/></a>
+        	<form method="post">
+            	<div class="search">
+                	<input type="text" placeholder="search"/>
+                	<input type="submit" value=""/>
+                </div>
+            </form>
+        </div>
+        <div class="main-con">
+        	<div class="left-menu">
+            	<ul>
+                	<li data-name="smtst" class="smtst active">
+                    	<a><span><img src="images/smoke.png"/></span><p>Smoke</p></a>
+                    </li><!--
+                    --><li data-name="fntst" class="fntst">
+                    	<a><span><img src="images/functional.png"/></span><p>Functional</p></a>
+                    </li><!--
+                    --><li data-name="rgtst" class="rgtst">
+                    	<a><span><img src="images/regression.png"/></span><p>Regression</p></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-chart">
+            	<div class="tabs-con">
+                	<div class="tab-pills">
+                    	<ul>
+                        	<li data-name="smtst" class="smtst active">SmokeTests</li>
+                        	<li data-name="fntst" class="fntst">FunctionalTests</li>
+                        	<li data-name="rgtst" class="rgtst">RegressionalTests</li>
+                        </ul>
+                    </div>
+                    <div class="tab-boxes">
+                    	<div id="rgtst" class="each-tabox visible">
+                        	<div class="tabox-head">
+                            	<div class="row-listing">
+                                	<ul class="bold">
+                                    	<li>Name</li>
+                                    	<li>Last Success</li>
+                                    	<li>Last Failure</li>
+                                    	<li>Duration</li>
+                                    	<li>Build</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <table id="regressionTest" cellpadding="0" cellspacing="0" class="tabox-body">
+                            	<thead></thead>
+                                <tbody>
+                                    <tr class="row-listing light">
+                                        <td>Cart & Checkout</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>ION</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>MAML</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>MCC</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>MobileWeb</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>PIP</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>PLP</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>Sample</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>Search</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot></tfoot>
+                            </table>
+                        </div>
+                        <div id="smtst" class="each-tabox">
+                        	<div class="tabox-head">
+                            	<div class="row-listing">
+                                	<ul class="bold">
+                                    	<li>Name</li>
+                                    	<li>Last Success</li>
+                                    	<li>Last Failure</li>
+                                    	<li>Duration</li>
+                                    	<li>Build</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <table id="smokeTest" cellpadding="0" cellspacing="0" class="tabox-body">
+                            	<thead></thead>
+                                <tbody>
+                                    <tr class="row-listing light">
+                                        <td>Cart & Checkout</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>ION</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>MAML</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>MCC</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>MobileWeb</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>PIP</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>PLP</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>Sample</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>Search</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot></tfoot>
+                            </table>
+                        </div>
+                        <div id="fntst" class="each-tabox">
+                        	<div class="tabox-head">
+                            	<div class="row-listing">
+                                	<ul class="bold">
+                                    	<li>Name</li>
+                                    	<li>Last Success</li>
+                                    	<li>Last Failure</li>
+                                    	<li>Duration</li>
+                                    	<li>Build</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <table id="functionalTest" cellpadding="0" cellspacing="0" class="tabox-body">
+                            	<thead></thead>
+                                <tbody>
+                                    <tr class="row-listing light">
+                                        <td>Cart & Checkout</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>ION</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>MAML</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>MCC</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>MobileWeb</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>PIP</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>PLP</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing grey">
+                                        <td>Sample</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                    <tr class="row-listing light">
+                                        <td>Search</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="json/testjobsByType/.json">
+                                        <img src="images/screw.png" alt="Build" width="30"></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot></tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
